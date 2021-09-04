@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800&display=swap');
+
+/* ====== Root ====== */
+:root{
+    --color-text-primary: #505050;
+    --color-purple-primary: rgb(114, 31, 182);
+    --color-purple-secondary: rgb(132, 42, 206);
+}
+
+*{margin: 0; padding:0; box-sizing: border-box;}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: none !important;
+    border: 0 none !important;
+    outline: 0 !important;
+} 
+
+/* dl, ol, ul {
+    margin-bottom: 0 !important;
+} */
+
+body{
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* ul li{
+    list-style: none;
+} */
+
+a{
+    text-decoration: none !important;
+}
+
+
+
+
