@@ -60,6 +60,10 @@ form{
 
 }
 
+.form-box.register{
+    transform: translateY(8%);
+}
+
 .register{
     margin-top: 5px;
 }

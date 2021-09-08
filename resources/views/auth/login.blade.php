@@ -14,29 +14,40 @@
         </nav>
     </header>
 
-    <div class="container">
-
-        <form action="" method="post" class="form-box">
-            @csrf
             
+        <div class="container">
+            
+            @if (Session::get('success'))
+                <div class="alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
+    
+            @if (Session::get('fail'))
+                <div class="alert alert-danger">
+                    {{ Session::get('fail') }}
+                </div>
+            @endif
+        <form action="{{ route('auth.check') }}" method="post" class="form-box">
+            @csrf
             <div class="form-title">
-                <h1>Entrar</h1>
+                <h1>Logar</h1>
             </div>
     
             <div class="form-input">
                 <label class="form-label">Email</label>
-                <input class="form-control @error('email') is-invalid @enderror" name="email" type="email" minlength="10" maxlength="100" required value="{{ old('name') }}">
+                <input class="form-control @error('email') is-invalid @enderror" name="email" type="email" value="{{ old('email') }}">
                 @error('email')<span class="invalid-feedback">{{ $message }}</span>@enderror
             </div>
 
             <div class="form-input">
                 <label class="form-label">Senha</label>
-                <input class="form-control @error('password') is-invalid @enderror" name="password" type="password" minlength="5" maxlength="32" required value="{{ old('password') }}">
+                <input class="form-control @error('password') is-invalid @enderror" name="password" type="password" value="{{ old('password') }}">
                 @error('password')<span class="invalid-feedback">{{ $message }}</span>@enderror
             </div>
 
             <div class="register">
-                <b>Não tem conta?</b> <a href="#">Cadastre-se</a>
+                <b>Não tem conta?</b> <a href="{{ route('auth.register') }}">Registre-se</a>
             </div>
 
             <div class="form-btn">
